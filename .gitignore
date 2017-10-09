@@ -2,4 +2,4 @@
 /app/public/libs
 /app/package-lock.json
 /app/public/dist/
-/app/data
+/data
