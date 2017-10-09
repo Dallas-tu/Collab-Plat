@@ -1,6 +1,6 @@
 // app/routes.js
 
-// grab the nerd model we just created
+// grab the nerd model
 var Nerd = require('./models/nerd');
 
     module.exports = function(app) {
