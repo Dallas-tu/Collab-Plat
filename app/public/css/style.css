@@ -1,0 +1,110 @@
+body {
+	background: white;
+	text-align: center;
+	font-family: Arial;
+}
+
+h1 {
+	color: red;
+	font-weight: bold;
+}
+
+#canvas {
+	background-color: #d3d3d3;
+	cursor: pointer;
+}
+
+#controls {
+	color: white;
+	top: 0;
+	right: 0px;
+	background: white;
+	padding: 16px;
+	position: absolute;
+	border-radius: 0 0 0 16px;
+	color: black;
+}
+
+#canvas-collab {
+
+	border: 2px solid white;
+
+	width: 640px;	
+	height: 480px;
+	overflow: hidden;
+	position: relative;
+}
+
+#chat-container{
+    right: 1;
+    position: relative;
+}
+
+.chat{
+    max-width: 300px;
+    display: none;
+}
+
+.chat-messages,
+.chat textarea,
+.chat-name{
+    border: 1px solid dodgerblue;
+}
+
+.chat-messages{
+    height: 300px;
+    overflow-y:scroll;
+     width: 278px;
+    padding: 10px;
+}
+
+
+
+.chat-name{
+    width: 278px;
+    padding: 10px;
+    border-top: 0;
+    border-bottom: 0;
+    font-size: 15px;
+}
+
+.chat textarea{
+    width: 100%;
+    padding: 10px;
+    max-width: 100%;
+}
+
+.chat-status{
+    color: #bbb;
+}
+
+.chat textarea,
+.chat-name{
+    outline: none;
+}
+
+form input[type=submit]{
+    font: 13px 'Trebuchet MS',sans-serif;
+    background-color: darkblue;
+    color : ghostwhite; 
+}
+
+.hideBtn{
+    margin-top: 5px; 
+    display: none;
+} 
+
+.user{
+    max-width: 300px;
+}
+
+#user{
+    outline: none;
+    width: 100%;
+}
+
+#btn1{
+    font: 13px 'Trebuchet MS',sans-serif;
+    background-color: gray;
+    color: white;
+}
