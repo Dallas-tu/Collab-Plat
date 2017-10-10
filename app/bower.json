@@ -7,6 +7,10 @@
     "animate.css": "latest",
     "angular": "latest",
     "angular-route": "latest",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "d3": "3.5.5",
+    "ot": "0.0.15",
+    "underscore": "1.8.3",
+    "codemirror": "5.2"
   }
 }
