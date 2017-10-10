@@ -108,3 +108,8 @@ form input[type=submit]{
     background-color: gray;
     color: white;
 }
+
+.CodeMirror, .CodeMirror-scroll
+{
+  height: 100%;        
+}

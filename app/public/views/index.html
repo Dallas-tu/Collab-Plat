@@ -8,6 +8,23 @@
 
 	<title>Collab-Plat</title>
 
+	<!-- codemirror -->
+	<link rel="stylesheet" href="http://codemirror.net/lib/codemirror.css">
+    <link rel="stylesheet" href="http://codemirror.net/theme/ambiance.css">
+    <script src="http://codemirror.net/lib/codemirror.js"></script>
+    <script src="http://codemirror.net/addon/mode/overlay.js"></script>
+    <script src="http://codemirror.net/mode/xml/xml.js"></script>
+    <script src="http://codemirror.net/mode/markdown/markdown.js"></script>
+    <script src="http://codemirror.net/mode/gfm/gfm.js"></script>
+    
+    <!-- Code block highlighting modes -->
+    <script src="http://codemirror.net/mode/javascript/javascript.js"></script>
+    <script src="http://codemirror.net/mode/css/css.js"></script>
+    <script src="http://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="http://codemirror.net/mode/clike/clike.js"></script>
+    <script src="http://codemirror.net/mode/clojure/clojure.js"></script>
+	<script src="http://codemirror.net/mode/ruby/ruby.js"></script>
+	
 	<!-- CSS -->
 	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -45,6 +62,7 @@
 		<!-- ANGULAR DYNAMIC CONTENT -->
 		<div ng-view></div>
 
+		<h4> Collab-Canvas</h4>
 		<div id="canvas-collab">
 			<canvas id="canvas" width="640" height="480"></canvas>
 			<div id="controls">
@@ -80,6 +98,7 @@
 			</div>
 		</div>
 
+		<h4> Collab-Chat</h4>
 		<div id='chat-container'>
 			<div class="user">
 				<input type="text" id='user' placeholder="Username" required/>
@@ -96,6 +115,11 @@
 				<div class="chat-status">Status : <span>Idle</span></div>
 			</div>
 			<button class='hideBtn'>Show Chat</button>
+		</div>
+
+		<h4>Collab-Text</h4>
+		<div id='text-collab'>
+				<textarea id="textit">'sup</textarea>
 		</div>
 
 		<script src="socket.io/socket.io.js" type="text/javascript"></script>

@@ -66,8 +66,8 @@
             oPrime = _this.server.receiveOperation(o.revision, o);
             delete o.revision;
             _this.server.appendToHistory(oPrime);
-            _this.aliceReceiveChannel.write(oPrime);
-            return _this.bobReceiveChannel.write(oPrime);
+            _this.alphaReceiveChannel.write(oPrime);
+            return _this.betaReceiveChannel.write(oPrime);
           };
         })(this);
         clientReceive = function(client) {
@@ -80,38 +80,38 @@
           };
         };
         this.server = new MyServer(this.str).appendTo(this.el);
-        this.aliceSendChannel = new NetworkChannel(true, serverReceive).appendTo(this.el);
-        this.aliceSendChannel.el.attr({
-          id: 'alice-send-channel'
+        this.alphaSendChannel = new NetworkChannel(true, serverReceive).appendTo(this.el);
+        this.alphaSendChannel.el.attr({
+          id: 'alpha-send-channel'
         });
-        this.alice = new MyClient("Alice", this.str, 0, this.aliceSendChannel).appendTo(this.el);
-        this.alice.el.attr({
-          id: 'alice'
+        this.alpha = new MyClient("alpha", this.str, 0, this.alphaSendChannel).appendTo(this.el);
+        this.alpha.el.attr({
+          id: 'alpha'
         });
-        this.alice.svg.attr('id', 'alice-diamond-diagram');
-        this.aliceReceiveChannel = new NetworkChannel(false, clientReceive(this.alice)).appendTo(this.el);
-        this.aliceReceiveChannel.el.attr({
-          id: 'alice-receive-channel'
+        this.alpha.svg.attr('id', 'alpha-diamond-diagram');
+        this.alphaReceiveChannel = new NetworkChannel(false, clientReceive(this.alpha)).appendTo(this.el);
+        this.alphaReceiveChannel.el.attr({
+          id: 'alpha-receive-channel'
         });
-        this.bobSendChannel = new NetworkChannel(true, serverReceive).appendTo(this.el);
-        this.bobSendChannel.el.attr({
-          id: 'bob-send-channel'
+        this.betaSendChannel = new NetworkChannel(true, serverReceive).appendTo(this.el);
+        this.betaSendChannel.el.attr({
+          id: 'beta-send-channel'
         });
-        this.bob = new MyClient("Bob", this.str, 0, this.bobSendChannel).appendTo(this.el);
-        this.bob.el.attr({
-          id: 'bob'
+        this.beta = new MyClient("beta", this.str, 0, this.betaSendChannel).appendTo(this.el);
+        this.beta.el.attr({
+          id: 'beta'
         });
-        this.bob.svg.attr('id', 'bob-diamond-diagram');
-        this.bobReceiveChannel = new NetworkChannel(false, clientReceive(this.bob)).appendTo(this.el);
-        this.bobReceiveChannel.el.attr({
-          id: 'bob-receive-channel'
+        this.beta.svg.attr('id', 'beta-diamond-diagram');
+        this.betaReceiveChannel = new NetworkChannel(false, clientReceive(this.beta)).appendTo(this.el);
+        this.betaReceiveChannel.el.attr({
+          id: 'beta-receive-channel'
         });
       }
   
       Visualization.prototype.insertBefore = function(el) {
         this.el.insertBefore(el);
-        this.alice.cm.refresh();
-        this.bob.cm.refresh();
+        this.alpha.cm.refresh();
+        this.beta.cm.refresh();
         return this;
       };
   
