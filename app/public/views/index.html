@@ -98,7 +98,13 @@
 			</div>
 		</div>
 
-		<h4> Collab-Chat</h4>
+		<h4>Collab-Text</h4>
+		<div id='text-collab'>
+				<textarea style="align:left" rows="4" cols="50" id="textit">'sup</textarea>
+		</div>
+		<br>
+		<br>
+		<h4>Collab-Chat</h4>
 		<div id='chat-container'>
 			<div class="user">
 				<input type="text" id='user' placeholder="Username" required/>
@@ -117,14 +123,12 @@
 			<button class='hideBtn'>Show Chat</button>
 		</div>
 
-		<h4>Collab-Text</h4>
-		<div id='text-collab'>
-				<textarea id="textit">'sup</textarea>
-		</div>
+		
 
 		<script src="socket.io/socket.io.js" type="text/javascript"></script>
 		<script src="js/canvas.js" type="text/javascript"></script>
 		<script src="js/chat.js" type="text/javascript"></script>
+		<script src="js/text.js" type="text/javascript"></script>
 
 	</div>
 </body>

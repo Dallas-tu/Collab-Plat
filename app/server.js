@@ -62,7 +62,8 @@ var count = 0;
 var connected = [];
 var users = [];
 
-
+//for text
+var body = "CAPSTONE";
 
 socket.sockets.on('connection', function(client) {
 	
@@ -134,6 +135,22 @@ socket.sockets.on('connection', function(client) {
 	client.on('disconnect', function(data){
 		count--;
         client.broadcast.emit('message', {count: count, sessionId: client.sessionId});
+    });
+
+    //TEXT =============================================================================
+
+    client.emit('refresh-text', {body: body});
+    
+    client.on('refresh-text', function (body_) {
+      console.log('new body');
+      body = body_;
+    });
+    
+    client.on('change-text', function (op) {
+      console.log(op);
+      if (op.origin == '+input' || op.origin == 'paste' || op.origin == '+delete') {
+          client.broadcast.emit('change-text', op);
+      };
     });
     
 });
