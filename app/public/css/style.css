@@ -1,6 +1,5 @@
 body {
 	background: white;
-	text-align: center;
 	font-family: Arial;
 }
 
@@ -11,15 +10,16 @@ h1 {
 
 #canvas {
 	background-color: #d3d3d3;
-	cursor: pointer;
+    cursor: pointer;
+    height: auto;
 }
 
 #controls {
 	color: white;
 	top: 0;
-	right: 0px;
+	right: 80px;
 	background: white;
-	padding: 16px;
+	padding: 10px;
 	position: absolute;
 	border-radius: 0 0 0 16px;
 	color: black;
@@ -28,7 +28,6 @@ h1 {
 #canvas-collab {
 
 	border: 2px solid white;
-
 	width: 640px;	
 	height: 480px;
 	overflow: hidden;

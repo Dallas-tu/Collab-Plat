@@ -5,7 +5,8 @@ $(document).ready(function () {
         lineNumbers: true
     });
 
-    editor.setSize(650, 200);
+    editor.setSize(600, 490);
+    editor.setTheme("monokai");
 
     var socket = io.connect();
 

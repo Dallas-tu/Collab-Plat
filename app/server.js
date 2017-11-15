@@ -15,7 +15,7 @@ var socket = io.listen(server);
 //var db = require('./config/db');
 
 // set our port
-var port = process.argv[2] || 8888; 
+const port = process.argv[2] || 8080; 
 
 // connect to our mongoDB database 
 // (uncomment after you entder in your own credentials in config/db.js)
@@ -42,10 +42,12 @@ require('./routes')(app); // configure  routes
 
 // start app ===============================================
 // startup our app at http://localhost:8888
-server.listen(port);              
+server.listen(port, () => {
+    // shoutout to the user                     
+    console.log('Server at ' + port);
+});              
 
-// shoutout to the user                     
-console.log('Server at ' + port);
+
 
 // expose app           
 exports = module.exports = app; 

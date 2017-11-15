@@ -9,19 +9,20 @@ $(document).ready(function () {
         var username = $('.user');
         var alluser = $('.allUsers');
         var select = document.getElementById('selectUsers');
-    
-        $('.hideBtn').on('click', function () {
-            var obj = $(this);
-            var chat = $('.chat');
-            //console.log(obj.text());
-            if (obj.text() === 'Show Chat') {
-                obj.text('Hide Chat');
-                chat.show();
-            } else if (obj.text() === 'Hide Chat') {
-                obj.text('Show Chat');
-                chat.hide();
-            }
-        });
+        var chat = $('.chat');
+        chat.show()
+        // $('.hideBtn').on('click', function () {
+        //     var obj = $(this);
+        //     var chat = $('.chat');
+        //     //console.log(obj.text());
+        //     if (obj.text() === 'Show Chat') {
+        //         obj.text('Hide Chat');
+        //         chat.show();
+        //     } else if (obj.text() === 'Hide Chat') {
+        //         obj.text('Show Chat');
+        //         chat.hide();
+        //     }
+        // });
     
     
         $('#btn1').click(function () {

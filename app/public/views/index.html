@@ -31,7 +31,15 @@
 	<link rel="stylesheet" href="css/layout.css" />
 	<script src="libs/jquery/dist/jquery.min.js"></script>
 	<!-- custom styles -->
+	<!-- Bootstrap -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- JS -->
 	<!-- <script src="libs/angular/angular.min.js"></script>
 	<script src="libs/angular-route/angular-route.min.js"></script> -->
@@ -61,67 +69,76 @@
 		<br>
 		<!-- ANGULAR DYNAMIC CONTENT -->
 		<div ng-view></div>
-
-		<h4> Collab-Canvas</h4>
-		<div id="canvas-collab">
-			<canvas id="canvas" width="640" height="480"></canvas>
-			<div id="controls">
-				<label for="color">Color:</label>
-				<select id="color">
-					<option>Blue</option>
-					<option>Red</option>
-					<option>Yellow</option>
-					<option>Magenta</option>
-					<option>Green</option>
-					<option>Cyan</option>
-					<option>Orange</option>
-					<option>White</option>
-				</select>
-				<label for="size">Size:</label>
-				<select id="size">
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-					<option>7</option>
-					<option>8</option>
-					<option>9</option>
-					<option>10</option>
-					<option>15</option>
-					<option>20</option>
-					<option>25</option>
-				</select>
-				<span id="count">Current Users: 1</span>
-				<button id="clear">Clear All</button>
+		<div class="row">
+			<div class="col-md-6"><h4> Collab-Canvas</h4>
+				<div id="canvas-collab">
+					<canvas id="canvas" width="550" height="480"></canvas>
+					<div id="controls">
+						<label for="color">Color:</label>
+						<select id="color">
+							<option>Blue</option>
+							<option>Red</option>
+							<option>Yellow</option>
+							<option>Magenta</option>
+							<option>Green</option>
+							<option>Cyan</option>
+							<option>Orange</option>
+							<option>White</option>
+						</select>
+						<label for="size">Size:</label>
+						<select id="size">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+							<option>15</option>
+							<option>20</option>
+							<option>25</option>
+						</select>
+						<span id="count">Current Users: 1</span>
+						<button id="clear">Clear All</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6"><h4>Collab-Text</h4>
+				<div id='text-collab'>
+						<textarea style="align:left" id="textit">'sup</textarea>
+				</div>
 			</div>
 		</div>
-
-		<h4>Collab-Text</h4>
-		<div id='text-collab'>
-				<textarea style="align:left" rows="4" cols="50" id="textit">'sup</textarea>
-		</div>
+		
 		<br>
-		<br>
-		<h4>Collab-Chat</h4>
-		<div id='chat-container'>
-			<div class="user">
-				<input type="text" id='user' placeholder="Username" required/>
-				<button type="button" id='btn1'>Confirm</button>
+		<div class="row">
+			<div class="col-md-8">
+				<h4>Collab-Chat</h4>
+				<div id='chat-container'>
+					<div class="user">
+						<input type="text" id='user' placeholder="Username" required/>
+						<button type="button" id='btn1'>Confirm</button>
+					</div>
+					<div class="chat">
+						<select class="allUsers" id='selectUsers'><option>-Users Online-</option></select>
+						<div class="chat-messages"></div>
+						<form>
+							<div class="chat-name"></div>
+							<textarea class="msg" placeholder="Type your message"></textarea>
+							<input type="submit" value="Send Message" />
+						</form>
+						<div class="chat-status">Status : <span>Idle</span></div>
+					</div>
+				</div>
 			</div>
-			<div class="chat">
-				<select class="allUsers" id='selectUsers'><option>-Users Online-</option></select>
-				<div class="chat-messages"></div>
-				<form>
-					<div class="chat-name"></div>
-					<textarea class="msg" placeholder="Type your message"></textarea>
-					<input type="submit" value="Send Message" />
-				</form>
-				<div class="chat-status">Status : <span>Idle</span></div>
+			<div class="col-md-6">
+				
 			</div>
-			<button class='hideBtn'>Show Chat</button>
 		</div>
+		
 
 		
 
