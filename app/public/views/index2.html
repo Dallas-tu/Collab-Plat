@@ -6,33 +6,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- codemirror -->
-	<link rel="stylesheet" href="http://codemirror.net/lib/codemirror.css">
+    <link rel="stylesheet" href="http://codemirror.net/lib/codemirror.css">
     <link rel="stylesheet" href="http://codemirror.net/theme/ambiance.css">
     <script src="http://codemirror.net/lib/codemirror.js"></script>
     <script src="http://codemirror.net/addon/mode/overlay.js"></script>
     <script src="http://codemirror.net/mode/xml/xml.js"></script>
     <script src="http://codemirror.net/mode/markdown/markdown.js"></script>
     <script src="http://codemirror.net/mode/gfm/gfm.js"></script>
-    
+
     <!-- Code block highlighting modes -->
     <script src="http://codemirror.net/mode/javascript/javascript.js"></script>
     <script src="http://codemirror.net/mode/css/css.js"></script>
     <script src="http://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
     <script src="http://codemirror.net/mode/clike/clike.js"></script>
     <script src="http://codemirror.net/mode/clojure/clojure.js"></script>
-	<script src="http://codemirror.net/mode/ruby/ruby.js"></script>
-	
-	<!-- CSS -->
-	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/layout.css" />
+    <script src="http://codemirror.net/mode/ruby/ruby.js"></script>
+
+    <link rel="stylesheet" href="http://codemirror.net/theme/monokai.css">
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
 </head>
 
@@ -41,86 +45,117 @@
     <div class="container-fluid">
         <div class="row" style="background-color: rgba(123, 255, 0, 0.363); height : 30px;">
             <!-- HEADER -->
-		    <div class="navbar navbar-fixed-top navbar-inverse">
+            <div class="navbar navbar-fixed-top navbar-inverse">
                 <div class="container">
                     <a class="navbar-brand" href="/">Collab-Plat</a>
                     <ul class="nav navbar-nav">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/demo">OT Demonstration</a></li>
-                        <li><a href="/about">About Us</a></li>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/demo">OT Demonstration</a>
+                        </li>
+                        <li>
+                            <a href="/about">About Us</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a><label for="color">Color:</label>
+                            <select style="color:black" id="color">
+                                <option>Blue</option>
+                                <option>Red</option>
+                                <option>Yellow</option>
+                                <option>Magenta</option>
+                                <option>Green</option>
+                                <option>Cyan</option>
+                                <option>Orange</option>
+                                <option>White</option>
+                            </select></a>
+                        </li>
+                        <li>
+                            <a>
+                                    <label for="size">Size:</label>
+                                    <select style="color:black" id="size">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>15</option>
+                                        <option>20</option>
+                                        <option>25</option>
+                                    </select>
+                            </a>
+                        </li>
+                        <li>
+                            <a><span id="count">Current Users: 1</span></a> 
+                        </li>
+                        <li><a><select class="allUsers" style="color:black" id='selectUsers'>
+                                <option>-Users Online-</option>
+                            </select></a>
+                        </li>
                     </ul>
                 </div>
-        </div>
+            </div>
         </div>
         <div class="row">
-            <div class="wrapper-fluid">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div id="screen1" class="col-md-5" style="background-color: rgba(0, 68, 255, 0.363); 
+            <div id="screen1" class="col-md-5" style="background-color: rgba(0, 68, 255, 0.363); 
                                     height:100vh">
-                                    <div class="col-md-6">
-                                        <div id="canvas-collab">
-                                            <canvas id="canvas" width="550" height="480"></canvas>
-                                            <div id="controls">
-                                                <label for="color">Color:</label>
-                                                <select id="color">
-                                                    <option>Blue</option>
-                                                    <option>Red</option>
-                                                    <option>Yellow</option>
-                                                    <option>Magenta</option>
-                                                    <option>Green</option>
-                                                    <option>Cyan</option>
-                                                    <option>Orange</option>
-                                                    <option>White</option>
-                                                </select>
-                                                <label for="size">Size:</label>
-                                                <select id="size">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                    <option>6</option>
-                                                    <option>7</option>
-                                                    <option>8</option>
-                                                    <option>9</option>
-                                                    <option>10</option>
-                                                    <option>15</option>
-                                                    <option>20</option>
-                                                    <option>25</option>
-                                                </select>
-                                                <span id="count">Current Users: 1</span>
-                                                <button id="clear">Clear All</button>
-                                            </div>
-                                        </div>
-                                    </div> 
-                        </div>
-                        <div id="screen2" class="col-md-5" style="background-color: rgba(234, 0, 255, 0.651);
-                                height:100vh">
-                                <div id='text-collab'>
-                                        <textarea style="align:left" id="textit">'sup</textarea>
-                                </div>
-                        </div>
-                        <div id="screen3" class="col-md-2" style="background-color: rgba(0, 255, 179, 0.205);
-                        height:100vh">
-                            <div id='chat-container'>
-                                <div class="user">
-                                    <input type="text" id='user' placeholder="Username" required/>
-                                    <button type="button" id='btn1'>Confirm</button>
-                                </div>
-                                <div class="chat">
-                                    <select class="allUsers" id='selectUsers'><option>-Users Online-</option></select>
-                                    <div class="chat-messages"></div>
-                                    <form>
-                                        <div class="chat-name"></div>
-                                        <textarea class="msg" placeholder="Type your message"></textarea>
-                                        <input type="submit" value="Send Message" />
-                                    </form>
-                                    <div class="chat-status">Status : <span>Idle</span></div>
-                                </div>
-                            </div>  
+                <div class="col-md-6">
+                    <div id="canvas-collab">
+                        <canvas id="canvas"></canvas>
+                        <div id="controls">
+                            <button id="clear">Clear All</button>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div id="screen2" class="col-md-5" style="background-color: rgba(234, 0, 255, 0.651);
+                                height:100vh">
+                <div id='text-collab'>
+                    <textarea style="align:left" id="textit">'sup</textarea>
+                </div>
+            </div>
+            <div id="screen3" class="col-md-2" style="background-color: rgb(0, 255, 179);
+                        height:100vh; position:fixed; right:0; z-index:99;">
+                <div id='chat-container'>
+                    <div class="chat">
+                        <div class="chat-messages"></div>
+                        <form>
+                            <div class="chat-name"></div>
+                            <textarea class="msg" placeholder="Type your message"></textarea>
+                            <input type="submit" value="Send Message" />
+                        </form>
+                        <div class="chat-status">Status :
+                            <span>Idle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Welcome to Collab-Plat</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Enter your Name</p>
+                </div>
+                <div class="user">
+                    <input type="text" id='user' class="form-control" placeholder="Username" required/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id='btn1' class="btn btn-default" data-dismiss="modal">Ok</button>
                 </div>
             </div>
         </div>
@@ -130,21 +165,27 @@
     <script src="js/chat.js" type="text/javascript"></script>
     <script src="js/text.js" type="text/javascript"></script>
     <script>
-    $(document).ready(function(){
-    var screen1 = $('#screen1');
-    var screen2 = $('#screen2');
-    var size1 = screen1.width();
-    var size2 = screen2.width();
-    
-    screen1.resizable();
+        $(document).ready(function () {
+            var screen1 = $('#screen1');
+            var screen2 = $('#screen2');
+            var size1 = screen1.width();
+            var size2 = screen2.width();
 
-    screen1.resize(function(){
-        var newsize1 = screen1.width();
-        var change = size1-newsize1;
-        screen2.css("width",size2+change);
-    })
-})
-</script>
+            screen1.resizable({
+                maxWidth:1050,
+                minWidth:50,
+            });
+
+            screen1.resize(function () {
+                var newsize1 = screen1.width();
+                var change = size1 - newsize1;
+                screen2.width(size2 + change);
+            });
+        })
+        $(window).on('load',function(){
+            $('#myModal').modal('show');
+        });
+    </script>
 </body>
 
 </html>

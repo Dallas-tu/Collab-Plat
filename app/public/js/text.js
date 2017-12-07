@@ -6,7 +6,7 @@ $(document).ready(function () {
         theme: "monokai"
     });
 
-    editor.setSize(600, 490);
+    editor.setSize(1100, 1000);
 
     var socket = io.connect();
 
