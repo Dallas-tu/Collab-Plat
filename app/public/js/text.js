@@ -2,11 +2,11 @@ $(document).ready(function () {
 
     var editor = CodeMirror.fromTextArea(document.getElementById("textit"), {
         mode: 'gfm',
-        lineNumbers: true
+        lineNumbers: true,
+        theme: "monokai"
     });
 
     editor.setSize(600, 490);
-    editor.setTheme("monokai");
 
     var socket = io.connect();
 
