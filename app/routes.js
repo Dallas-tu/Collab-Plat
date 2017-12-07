@@ -10,11 +10,19 @@ var Nerd = require('./models/nerd');
         // frontend routes =========================================================
         // route to handle all angular requests
         app.get('/', function(req, res) {
-            res.sendfile('./public/views/index.html'); // load our public/index.html file
+            res.sendfile('./public/views/home.html'); // load our public/index.html file
         });
 
+        app.get('/a2drt', function(req, res){
+            res.sendfile('./public/views/index.html')
+        });
         app.get('/demo', function(req, res) {
             res.sendfile('./public/views/viz.html'); // load our public/index.html file
         });
+
+        app.get('/about', function(req, res) {
+            res.sendfile('./public/views/about.html'); // load our public/index.html file
+        });
+
 
     };
