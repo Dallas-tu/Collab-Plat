@@ -13,6 +13,10 @@ var Nerd = require('./models/nerd');
             res.sendfile('./public/views/home.html'); // load our public/index.html file
         });
 
+        app.get('/uidemo', function(req, res) {
+            res.sendfile('./public/views/index2.html'); // load our public/index.html file
+        });
+
         app.get('/a2drt', function(req, res){
             res.sendfile('./public/views/index.html')
         });
