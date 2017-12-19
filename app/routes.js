@@ -24,5 +24,9 @@ var Nerd = require('./models/nerd');
             res.sendfile('./public/views/about.html'); // load our public/index.html file
         });
 
+        app.get('/media', function (req, res) {
+            res.sendfile('./public/views/media.html');
+        })
+
 
     };
