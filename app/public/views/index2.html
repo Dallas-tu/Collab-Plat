@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
+    <title>Collab-Plat</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- codemirror -->
@@ -43,7 +43,7 @@
 <body style="overflow-y: hidden;">
 
     <div class="container-fluid">
-        <div class="row" style="background-color: rgba(123, 255, 0, 0.363); height : 30px;">
+        <div class="row" style="background-color: rgb(255, 255, 255); height : 30px;">
             <!-- HEADER -->
             <div class="navbar navbar-fixed-top navbar-inverse">
                 <div class="container">
@@ -104,30 +104,30 @@
             </div>
         </div>
         <div class="row">
-            <div id="screen1" class="col-md-5" style="background-color: rgba(0, 68, 255, 0.363); 
+            <div id="screen1" class="col-md-5" style="background-color: rgb(255, 255, 255); 
                                     height:100vh">
                 <div class="col-md-6">
                     <div id="canvas-collab">
-                        <canvas id="canvas"></canvas>
+                        <canvas id="canvas" class='img-responsive' width =1080 height=1080></canvas>
                         <div id="controls">
                             <button id="clear">Clear All</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="screen2" class="col-md-5" style="background-color: rgba(234, 0, 255, 0.651);
+            <div id="screen2" class="col-md-5" style="background-color: rgb(255, 255, 255);
                                 height:100vh">
                 <div id='text-collab'>
                     <textarea style="align:left" id="textit">'sup</textarea>
                 </div>
             </div>
-            <div id="screen3" class="col-md-2" style="background-color: rgb(0, 255, 179);
+            <div id="screen3" class="col-md-2" style="background-color: rgb(255, 255, 255);
                         height:100vh; position:fixed; right:0; z-index:99;">
                 <div id='chat-container'>
                     <div class="chat">
-                        <div class="chat-messages"></div>
+                        <div style="color:black" class="chat-messages" style="padding-right:3px"></div>
                         <form>
-                            <div class="chat-name"></div>
+                            <div style="color:black" class="chat-name"></div>
                             <textarea class="msg" placeholder="Type your message"></textarea>
                             <input type="submit" value="Send Message" />
                         </form>

@@ -27,8 +27,8 @@ h1 {
 #canvas-collab {
 
 	border: 2px solid white;
-	width: 640px;	
-	height: 480px;
+	width: 1080px;	
+	height: 1080px;
 	overflow: hidden;
 	position: relative;
 }
